@@ -29,17 +29,22 @@ RegisterNumber:  212221040006
 ```
 import pandas as pd
 data=pd.read_csv("Employee.csv")
+print("data.head()")
 data.head()
 
+print("data.info()")
 data.info()
 
+print("isnull() and sum()")
 data.isnull().sum()
 
+print("data value counts()")
 data["left"].value_counts()
 
 from sklearn.preprocessing import LabelEncoder
 le=LabelEncoder()
 
+print("data.head() for salary")
 data["salary"]=le.fit_transform(data["salary"])
 data.head()
 
@@ -58,8 +63,10 @@ y_pred=dt.predict(x_test)
 
 from sklearn import metrics
 accuracy=metrics.accuracy_score(y_test,y_pred)
+print("Accuracy value")
 accuracy
 
+print("data.prediction")
 dt.predict([[0.5,0.8,9,260,6,0,1,2]])
 
 
